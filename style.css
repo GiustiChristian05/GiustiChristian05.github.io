@@ -19,30 +19,18 @@ body {
     position: relative;
 }
 
-h1 {
-    position: absolute;
-    top: 5%; /* Posiziona la scritta più vicino alla parte superiore */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3em;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 10; /* In cima agli altri elementi */
-    transition: opacity 0.5s ease; /* Transizione per il messaggio */
-}
-
 #box-container {
     display: grid;
-    grid-template-columns: repeat(3, 125px); /* Cambia a 4 colonne con dimensione ridotta */
-    gap: 10px; /* Riduci anche lo spazio tra le scatole */
+    grid-template-columns: repeat(3, 125px); /* 3 colonne */
+    gap: 20px; /* Spazio ridotto tra le scatole */
     justify-content: center;
     position: relative;
     z-index: 1;
 }
 
 .box {
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Dimensione ridotta delle scatole */
+    height: 100px; /* Dimensione ridotta delle scatole */
     background: #fff;
     border: 5px solid #ff6b6b;
     border-radius: 15px;
@@ -50,7 +38,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 1.5em; /* Ridotta la dimensione del font */
     font-weight: bold;
     cursor: pointer;
     transition: transform 1s ease, background 0.4s ease;
@@ -59,16 +47,9 @@ h1 {
     perspective: 1000px;
 }
 
-.box:hover {
-    background: rgba(255, 107, 107, 0.7); /* Scurisce la scatola */
-    transform: scale(1.05) rotate(2deg); /* Ingrandisce e vibra */
-    animation: shake 0.3s infinite alternate; /* Effetto vibrazione */
-}
 
-@keyframes shake {
-    0% { transform: translate(0); }
-    100% { transform: translate(-3px, 0); }
-}
+
+
 
 .box.opened {
     transform: rotateY(180deg);
@@ -152,6 +133,7 @@ h1 {
     overflow: hidden;
     z-index: -1; /* Metti il contenitore dei coriandoli sullo sfondo */
 }
+
 .confetti {
     position: absolute;
     width: 10px;
